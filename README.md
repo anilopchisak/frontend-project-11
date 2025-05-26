@@ -1,2 +1,3 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/anilopchisak/frontend-project-11/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/anilopchisak/frontend-project-11/actions)
+[![Actions Status](https://github.com/anilopchisak/frontend-project-11/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/anilopchisak/frontend-project-11/actions) 
+[![frontend-project-11](https://github.com/anilopchisak/frontend-project-11/actions/workflows/frontend-project-11.yml/badge.svg)](https://github.com/anilopchisak/frontend-project-11/actions/workflows/frontend-project-11.yml)
