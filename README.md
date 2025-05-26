@@ -7,3 +7,4 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=anilopchisak_frontend-project-11&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=anilopchisak_frontend-project-11)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=anilopchisak_frontend-project-11&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=anilopchisak_frontend-project-11)
 
+### Ссылка на деплой проекта на Vercel: https://frontend-project-11-drab-beta.vercel.app/
