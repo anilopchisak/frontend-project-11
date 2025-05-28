@@ -1,4 +1,5 @@
 import { string } from 'yup';
+import watch from './view.js'
 // https://lorem-rss.hexlet.app/feed
 
 // const stateUpdate = (state) => {
@@ -41,12 +42,10 @@ const sendForm = (url) => {
 
 export default () => {
     const state = {
-        links: [],
-        errors: {
-            validation: [],
-            fetch: [],
-        }
+        links: []
     }
+
+    const watchedState = watch(state)
 
     const inputEl = document.getElementById('url-input')
     const formEl = document.getElementById('rss-form')
@@ -56,7 +55,7 @@ export default () => {
     formEl.addEventListener('submit', (event) => {
         event.preventDefault()
         const url = inputEl.value
-        validateLink(rssSchema, state, url)
+        validateLink(rssSchema, watchedState, url)
             .then((valid) => {
                 if (!valid) {
                     inputEl.classList.add('is-invalid')
@@ -69,7 +68,7 @@ export default () => {
             .then(() => sendForm(url))
             .then((data) => {
                 console.log(data)
-                state.links.push(url)
+                watchedState.links.push(url)
             })
             .then(() => render(formEl, inputEl))
             .catch((error) => {
