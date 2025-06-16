@@ -13,4 +13,7 @@ lint-fix:
 serve:
 	npx webpack serve
 
+build:
+	npm run build
+
 .PHONY: test

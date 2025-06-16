@@ -1,4 +1,4 @@
 import './assets/styles.scss'
-import app from './index.js'
+import app from './app.js'
 
 app()
