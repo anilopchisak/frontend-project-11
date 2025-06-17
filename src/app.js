@@ -1,21 +1,29 @@
 import initFormController from './controllers/formControllers.js'
 import { initState, makeWatchedState } from './store/state.js';
 import { renderAll } from './view/views.js'
-// import i18n from 'i18next'
+import i18n from 'i18next'
+import resources from './locales/index.js'
 
 export default () => {
+    i18n.init({
+        lng: 'ru',
+        debug: true,
+        resources
+    })
+
     const initialState = initState()
 
     const elements = {
         form: document.getElementById('rss-form'),
-        input: document.getElementById('url-input')
+        input: document.getElementById('url-input'),
+        feedback: document.getElementById('feedback'),
     }
     
     const state = makeWatchedState(initialState, () => {
-        renderAll(state, elements)
+        renderAll(state, elements, i18n.t)
     })
 
-    initFormController(state, elements)
+    initFormController(state, elements, i18n.t)
 
-    renderAll(state, elements)
+    renderAll(state, elements, i18n.t)
 }

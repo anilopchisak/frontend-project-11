@@ -1,26 +1,31 @@
 import { FORM_STATUS } from "../utils/consts"
 
-const renderForm = (state, elements) => {
-    const { input } = elements
+const renderForm = (state, elements, t) => {
+    const { input, feedback } = elements
 
-    if (state.ui.form.valid) {
-        input.classList.remove('is-invalid')
-    }
-    else {
-        input.classList.add('is-invalid')
-    }
+    input.value = state.ui.form.value
 
     if (state.ui.form.status === FORM_STATUS.SENDING) {
         input.disabled = true
+        return
     }
     else {
         input.disabled = false
     }
 
-    input.value = state.ui.form.value
+    if (state.ui.form.status === FORM_STATUS.ERROR) {
+        input.classList.add('is-invalid')
+        feedback.textContent = t(state.ui.form.error)
+        feedback.classList.add('text-danger')
+        input.focus()
+        return
+    }
+
+    input.classList.remove('is-invalid')
+    feedback.textContent = ''
     input.focus()
 }
 
-export const renderAll = (state, elements) => {
-    renderForm(state, elements)
+export const renderAll = (state, elements, t) => {
+    renderForm(state, elements, t)
 }

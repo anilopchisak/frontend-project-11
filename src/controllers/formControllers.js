@@ -2,9 +2,9 @@ import { fetchRSS } from '../http/api.js'
 import { FORM_STATUS } from '../utils/consts.js'
 import createValidator from '../models/validate.js'
 
-export default (state, elements) => {
+export default (state, elements, t) => {
     const { input, form } = elements
-    const validateUrl = createValidator()
+    const validateUrl = createValidator(t)
 
     form.addEventListener('submit', (e) => {
         e.preventDefault()
@@ -16,6 +16,7 @@ export default (state, elements) => {
         validateUrl(url, state.feeds)
             .then(validUrl => {
                 fetchRSS(validUrl)
+                state.feeds.push(validUrl)
             })
             .then(() => {
                 state.ui.form.status = FORM_STATUS.SUCCESS
