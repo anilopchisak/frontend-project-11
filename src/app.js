@@ -16,6 +16,7 @@ export default () => {
     const elements = {
         form: document.getElementById('rss-form'),
         input: document.getElementById('url-input'),
+        submit: document.querySelector('button[type="submit"]'),
         feedback: document.getElementById('feedback'),
     }
     

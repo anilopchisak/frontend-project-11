@@ -10,10 +10,11 @@ export default {
         },
         errors: {
             required: 'Обязательное поле',
-            invalidUrl: 'Ссылка должна быть валидным URL',
+            invalidUrl: 'Ресурс не содержит валидный RSS',
             duplicateUrl: 'RSS уже существует',
             network: 'Ошибка сети',
             parsing: 'Ошибка парсинга RSS'
-        }
+        },
+        success: 'RSS загружен успешно'
     }
 }

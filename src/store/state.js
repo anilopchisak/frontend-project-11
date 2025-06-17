@@ -14,9 +14,16 @@ export const initState = () => ({
     }
 })
 
-export const makeWatchedState = (initialState, renderAll) => {
-    const watchedState = onChange(initialState, (state, elements) => {
-        renderAll(state, elements)
+export const makeWatchedState = (initialState, renderCallback) => {
+    const watchedState = onChange(initialState, (path) => {
+        const renderPaths = [
+            'feeds',
+            'ui.form'
+        ]
+
+        if (renderPaths.some(p => path.startsWith(p))) {
+            renderCallback()
+        }
     })
     return watchedState
 }
