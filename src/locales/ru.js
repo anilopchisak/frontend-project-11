@@ -10,11 +10,22 @@ export default {
         },
         errors: {
             required: 'Обязательное поле',
-            invalidUrl: 'Ресурс не содержит валидный RSS',
+            invalidUrl: 'Ссылка должна быть валидным URL',
             duplicateUrl: 'RSS уже существует',
             network: 'Ошибка сети',
             parsing: 'Ошибка парсинга RSS'
         },
-        success: 'RSS загружен успешно'
+        success: 'RSS успешно загружен',
+        feeds: {
+            title: 'Фиды',
+        },
+        posts: {
+            title: 'Посты',
+            view: 'Просмотр'
+        },
+        modal: {
+            readFull: 'Читать полностью',
+            close: 'Закрыть'
+        }
     }
 }

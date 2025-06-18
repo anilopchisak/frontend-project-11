@@ -2,7 +2,7 @@ import { fetchRSS } from '../http/api.js'
 import { FORM_STATUS } from '../utils/consts.js'
 import createValidator from '../models/validate.js'
 import parseRSS from '../models/parser.js'
-import { uniqueId } from 'lodash'
+import { createFeed, createPost } from '../store/models.js'
 
 export default (state, elements, t) => {
     const { input, form } = elements
@@ -19,17 +19,18 @@ export default (state, elements, t) => {
 
         validateUrl(url, state.feeds)
             .then(validUrl => fetchRSS(validUrl))
-            .then((response) => parseRSS(response.trim()))
-            .then((parsedRSS) => {
-                state.feeds.push({
-                    id: uniqueId('feed_'),
-                    url: url
+            .then(xml => parseRSS(xml, url))
+            .then(({ feed, posts }) => {
+                state.feeds.push(createFeed(feed.url, feed.title, feed.description))
+                posts.forEach(post => {
+                    const processedPost = createPost(
+                        state.feeds[state.feeds.length -1].id,
+                        post.title,
+                        post.link,
+                        post.description)
+                    state.posts.push(processedPost)
                 })
-                state.posts.push({
-                    id: uniqueId('post_'),
-                    url: parsedRSS
-                })
-
+                
                 state.ui.form.status = FORM_STATUS.SUCCESS
                 state.ui.form.value = '';
                 state.ui.form.error = null;

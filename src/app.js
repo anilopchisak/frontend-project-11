@@ -18,6 +18,8 @@ export default () => {
         input: document.getElementById('url-input'),
         submit: document.querySelector('button[type="submit"]'),
         feedback: document.getElementById('feedback'),
+        feedsContainer: document.getElementsByClassName('feeds'),
+        postsContainer: document.getElementsByClassName('posts'),
     }
     
     const state = makeWatchedState(initialState, () => {

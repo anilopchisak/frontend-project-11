@@ -18,6 +18,7 @@ export const makeWatchedState = (initialState, renderCallback) => {
     const watchedState = onChange(initialState, (path) => {
         const renderPaths = [
             'feeds',
+            'posts',
             'ui.form'
         ]
 
