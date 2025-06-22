@@ -1,13 +1,13 @@
 import * as yup from 'yup';
+import { ERROR_STATUS } from '../utils/consts.js'
 
 export default (t) => {
     yup.setLocale({
         string: {
-            url: () => t('errors.invalidUrl')
+            url: () => t(`${ERROR_STATUS.INVALID_URL}`)
         },
         mixed: {
-            required: () => t('errors.required'),
-            notOneOf: () => t('errors.duplicateUrl')
+            notOneOf: () => t(`${ERROR_STATUS.DUPLICATE_URL}`)
         }
     })
 

@@ -17,7 +17,9 @@ export default (state, elements, t) => {
         state.ui.form.error = ''
         state.ui.form.valid = true
 
-        validateUrl(url, state.feeds)
+        const existingUrls = state.feeds.map(feed => feed.url)
+
+        validateUrl(url, existingUrls)
             .then(validUrl => fetchRSS(validUrl))
             .then(xml => parseRSS(xml, url))
             .then(({ feed, posts }) => {

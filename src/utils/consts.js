@@ -4,3 +4,10 @@ export const FORM_STATUS = {
     ERROR: 'error',
     SUCCESS: 'success'
 }
+
+export const ERROR_STATUS = {
+    INVALID_URL: 'errors.invalidUrl',
+    DUPLICATE_URL: 'errors.duplicateUrl',
+    NETWORK: 'errors.network',
+    PARSING: 'errors.parsing',
+}
