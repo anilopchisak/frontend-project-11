@@ -33,6 +33,8 @@ export default (state, elements, t) => {
                     state.posts.push(processedPost)
                 })
                 
+                console.log(state.posts)
+
                 state.ui.form.status = FORM_STATUS.SUCCESS
                 state.ui.form.value = '';
                 state.ui.form.error = null;
