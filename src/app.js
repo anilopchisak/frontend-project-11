@@ -1,4 +1,5 @@
 import initFormController from './controllers/formControllers.js'
+import initPostsController from './controllers/postsControllers.js'
 import { initState, makeWatchedState } from './store/state.js';
 import initUpdater from './http/updater.js'
 import { renderAll } from './view/views.js'
@@ -21,6 +22,11 @@ export default () => {
         feedback: document.getElementById('feedback'),
         feedsContainer: document.querySelector('.feeds'),
         postsContainer: document.querySelector('.posts'),
+        modal: {
+            title: document.querySelector('.modal-title'),
+            body: document.querySelector('.modal-body'),
+            readFull: document.querySelector('a.btn')
+        }
     }
     
     const state = makeWatchedState(initialState, () => {
@@ -28,6 +34,7 @@ export default () => {
     })
 
     initFormController(state, elements, i18n.t)
+    initPostsController(state, elements)
 
     const stopUpdater = initUpdater(state)
     
@@ -37,4 +44,5 @@ export default () => {
     });
 
     renderAll(state, elements, i18n.t)
+    elements.input.focus()
 }

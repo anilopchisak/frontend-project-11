@@ -11,6 +11,7 @@ export const initState = () => ({
             valid: true,
             value: ''
         },
+        readPosts: []
     }
 })
 
@@ -19,7 +20,8 @@ export const makeWatchedState = (initialState, renderCallback) => {
         const renderPaths = [
             'feeds',
             'posts',
-            'ui.form'
+            'ui.form',
+            'ui.readPosts',
         ]
 
         if (renderPaths.some(p => path.startsWith(p))) {

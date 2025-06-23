@@ -4,7 +4,7 @@ export default {
             invalidUrl: 'Ссылка должна быть валидным URL',
             duplicateUrl: 'RSS уже существует',
             network: 'Ошибка подключения к сети',
-            parsing: 'Ресурс не содержит валидный RSS'
+            parsing: 'Ресурс не содержит валидный RSS',
         },
         success: 'RSS успешно загружен',
         feeds: {
@@ -12,11 +12,7 @@ export default {
         },
         posts: {
             title: 'Посты',
-            view: 'Просмотр'
+            view: 'Просмотр',
         },
-        modal: {
-            readFull: 'Читать полностью',
-            close: 'Закрыть'
-        }
     }
 }

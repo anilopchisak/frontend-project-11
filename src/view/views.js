@@ -22,9 +22,9 @@ const createCard = (title, t) => {
     return card
 }
 
-const renderPosts = (posts, elements, t) => {
+const renderPosts = (posts, readPosts, elements, t) => {
     if (posts.length === 0) return
-
+    
     const { postsContainer } = elements
     postsContainer.textContent = ''
 
@@ -38,8 +38,14 @@ const renderPosts = (posts, elements, t) => {
         li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-start', 'border-0', 'border-end-0')
 
         const link = document.createElement('a')
-        link.classList.add('fw-bold')
-        link.setAttribute('href', post.url)
+        if (readPosts.includes(post.id)) {
+            link.classList.replace('fw-bold', 'fw-normal')
+            link.classList.add('link-secondary')
+        }
+        else {
+            link.classList.add('fw-bold')
+        }
+        link.setAttribute('href', post.link)
         link.setAttribute('data-id', post.id)
         link.setAttribute('target', '_blank')
         link.setAttribute('rel', 'noopener noreferrer')
@@ -115,12 +121,10 @@ const renderForm = (state, elements, t) => {
         feedback.textContent = t('success')
         feedback.classList.replace('text-danger', 'text-success')
     }
-
-    input.focus()
 }
 
 export const renderAll = (state, elements, t) => {
     renderForm(state, elements, t)
     renderFeeds(state.feeds, elements, t)
-    renderPosts(state.posts, elements, t)
+    renderPosts(state.posts, state.ui.readPosts, elements, t)
 }

@@ -37,11 +37,13 @@ export default (state, elements, t) => {
                 state.ui.form.value = '';
                 state.ui.form.error = null;
                 state.ui.form.valid = true
+                input.focus()
             })
             .catch((error) => {
                 state.ui.form.status = FORM_STATUS.ERROR
                 state.ui.form.error = error.message
                 state.ui.form.valid = false
+                input.focus()
             })
     })
 }
