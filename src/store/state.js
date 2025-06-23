@@ -24,7 +24,7 @@ export const makeWatchedState = (initialState, renderCallback) => {
       'ui.readPosts',
     ]
 
-    if (renderPaths.some((p) => path.startsWith(p))) {
+    if (renderPaths.some(p => path.startsWith(p))) {
       renderCallback()
     }
   })

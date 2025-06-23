@@ -12,43 +12,7 @@ export default defineConfig([
       js,
       '@stylistic': stylistic,
     },
-    'extends': [
-      'js/recommended',
-    ],
   },
-  //   rules: {
-  //     '@stylistic/quotes': ['error', 'single'],
-  //     '@stylistic/semi': ['error', 'never'],
-  //     '@stylistic/no-multiple-empty-lines': ['error', { max: 1 }],
-  //     '@stylistic/eol-last': ['error', 'always'],
-  //     '@stylistic/object-curly-spacing': ['error', 'always'],
-  //     '@stylistic/space-infix-ops': ['error', { int32Hint: false }],
-  //     '@stylistic/no-trailing-spaces': ['error', {
-  //       ignoreComments: true,
-  //       skipBlankLines: false,
-  //     }],
-  //     '@stylistic/comma-dangle': ['error', 'always-multiline'],
-  //     '@stylistic/quote-props': ['error', 'consistent-as-needed', {
-  //       keywords: true,
-  //       unnecessary: false,
-  //       numbers: true,
-  //     }],
-  //     '@stylistic/indent': ['error', 2, {
-  //       SwitchCase: 1,
-  //       ignoredNodes: ['TemplateLiteral'],
-  //       offsetTernaryExpressions: true,
-  //       MemberExpression: 1,
-  //       FunctionExpression: { body: 1, parameters: 2 },
-  //       FunctionDeclaration: { body: 1, parameters: 2 },
-  //       CallExpression: { arguments: 2 },
-  //       ArrayExpression: 1,
-  //       ObjectExpression: 1,
-  //       ImportDeclaration: 1,
-  //       flatTernaryExpressions: false,
-  //     }],
-  //     '@stylistic/arrow-parens': ['error', 'always'],
-  //   },
-  // },
   {
     files: [
       '**/*.{js,mjs,cjs}',

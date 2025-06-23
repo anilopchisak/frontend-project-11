@@ -8,7 +8,7 @@ export default (state, elements, t) => {
   const { input, form } = elements
   const validateUrl = createValidator(t)
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault()
     const url = input.value.trim()
 
@@ -20,18 +20,20 @@ export default (state, elements, t) => {
     const existingUrls = state.feeds.map(feed => feed.url)
 
     validateUrl(url, existingUrls)
-      .then(validUrl => fetchRSS(validUrl))
-      .then(xml => parseRSS(xml, url))
+      .then((validUrl) => fetchRSS(validUrl))
+      .then((xml) => parseRSS(xml, url))
       .then(({ feed, posts }) => {
-        state.feeds.push(createFeed(feed.url, feed.title, feed.description))
-        posts.forEach(post => {
-            const processedPost = createPost(
-              state.feeds[state.feeds.length - 1].id,
-              post.title,
-              post.link,
-              post.description
-            )
-            state.posts.push(processedPost)
+        state.feeds.push(
+          createFeed(feed.url, feed.title, feed.description),
+        )
+        posts.forEach((post) => {
+          const processedPost = createPost(
+            state.feeds[state.feeds.length - 1].id,
+            post.title,
+            post.link,
+            post.description,
+          )
+          state.posts.push(processedPost)
         })
 
         state.ui.form.status = FORM_STATUS.SUCCESS
@@ -40,7 +42,7 @@ export default (state, elements, t) => {
         state.ui.form.valid = true
         input.focus()
       })
-      .catch(error => {
+      .catch((error) => {
         state.ui.form.status = FORM_STATUS.ERROR
         state.ui.form.error = error.message
         state.ui.form.valid = false

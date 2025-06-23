@@ -22,7 +22,7 @@ const updateFeeds = (state, isUpdating) => {
               state.feeds.at(-1).id,
               post.title,
               post.link,
-              post.description
+              post.description,
             )
             state.posts.push(processedPost)
           })
