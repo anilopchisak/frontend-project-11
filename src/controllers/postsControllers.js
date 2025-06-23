@@ -26,7 +26,6 @@ export default (state, elements) => {
         if (link) {
             const postId = link.dataset.id
             markPostAsRead(state, postId)
-            return
         }
     })
 }

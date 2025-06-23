@@ -35,13 +35,7 @@ export default () => {
 
     initFormController(state, elements, i18n.t)
     initPostsController(state, elements)
-
-    const stopUpdater = initUpdater(state)
-    
-    window.addEventListener('beforeunload', stopUpdater)
-    window.addEventListener('error', () => {
-        if (stopUpdater) stopUpdater();
-    });
+    initUpdater(state)
 
     renderAll(state, elements, i18n.t)
     elements.input.focus()
