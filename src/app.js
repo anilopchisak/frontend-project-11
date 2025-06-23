@@ -1,6 +1,6 @@
 import initFormController from './controllers/formControllers.js'
 import initPostsController from './controllers/postsControllers.js'
-import { initState, makeWatchedState } from './store/state.js';
+import { initState, makeWatchedState } from './store/state.js'
 import initUpdater from './http/updater.js'
 import { renderAll } from './view/views.js'
 import i18n from 'i18next'

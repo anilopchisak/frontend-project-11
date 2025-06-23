@@ -1,7 +1,7 @@
-import { fetchRSS } from "./api"
+import { fetchRSS } from './api'
 import parseRSS from '../models/parser.js'
-import { createPost } from "../store/models"
-import { FORM_STATUS, UPDATE_INTERVAL } from "../utils/consts"
+import { createPost } from '../store/models'
+import { FORM_STATUS, UPDATE_INTERVAL } from '../utils/consts'
 
 const updateFeeds = (state, isUpdating) => {
     if (isUpdating || state.ui.form.status === FORM_STATUS.SENDING) return
@@ -27,8 +27,8 @@ const updateFeeds = (state, isUpdating) => {
                 })
             })
             .catch(error => {
-                console.error(`Ошибка обновления фида ${feed.url}:`, error);
-                return 0;
+                console.error(`Ошибка обновления фида ${feed.url}:`, error)
+                return 0
             })
     })
 

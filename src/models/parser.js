@@ -1,8 +1,8 @@
-import { ERROR_STATUS } from "../utils/consts"
+import { ERROR_STATUS } from '../utils/consts'
 
 export default (xml, url) => {
     const parser = new DOMParser()
-    const doc = parser.parseFromString(xml, "text/xml")
+    const doc = parser.parseFromString(xml, 'text/xml')
     
     const channel = doc.querySelector('channel')
     if (!channel) throw new Error(`${ERROR_STATUS.PARSING}`)

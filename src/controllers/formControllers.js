@@ -34,8 +34,8 @@ export default (state, elements, t) => {
                 })
 
                 state.ui.form.status = FORM_STATUS.SUCCESS
-                state.ui.form.value = '';
-                state.ui.form.error = null;
+                state.ui.form.value = ''
+                state.ui.form.error = null
                 state.ui.form.valid = true
                 input.focus()
             })

@@ -1,4 +1,4 @@
-import * as yup from 'yup';
+import * as yup from 'yup'
 import { ERROR_STATUS } from '../utils/consts.js'
 
 export default (t) => {

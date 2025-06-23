@@ -1,4 +1,4 @@
-import { FORM_STATUS } from "../utils/consts"
+import { FORM_STATUS } from '../utils/consts'
 
 const createCard = (title, t) => {
     const card = document.createElement('div')
