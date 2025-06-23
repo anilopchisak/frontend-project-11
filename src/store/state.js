@@ -16,7 +16,7 @@ export const initState = () => ({
 })
 
 export const makeWatchedState = (initialState, renderCallback) => {
-  const watchedState = onChange(initialState, path => {
+  const watchedState = onChange(initialState, (path) => {
     const renderPaths = [
       'feeds',
       'posts',
@@ -24,7 +24,7 @@ export const makeWatchedState = (initialState, renderCallback) => {
       'ui.readPosts',
     ]
 
-    if (renderPaths.some(p => path.startsWith(p))) {
+    if (renderPaths.some((p) => path.startsWith(p))) {
       renderCallback()
     }
   })

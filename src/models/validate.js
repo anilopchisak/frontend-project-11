@@ -1,7 +1,7 @@
 import * as yup from 'yup'
 import { ERROR_STATUS } from '../utils/consts.js'
 
-export default t => {
+export default (t) => {
   yup.setLocale({
     string: {
       url: () => t(`${ERROR_STATUS.INVALID_URL}`),

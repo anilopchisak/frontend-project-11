@@ -33,7 +33,7 @@ const renderPosts = (posts, readPosts, elements, t) => {
 
   const postsList = card.querySelector('ul')
 
-  posts.forEach(post => {
+  posts.forEach((post) => {
     const li = document.createElement('li')
     li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-start', 'border-0', 'border-end-0')
 
@@ -76,7 +76,7 @@ const renderFeeds = (feeds, elements, t) => {
 
   const feedsList = card.querySelector('ul')
 
-  feeds.forEach(feed => {
+  feeds.forEach((feed) => {
     const li = document.createElement('li')
     li.classList.add('list-group-item', 'border-0', 'border-end-0')
 

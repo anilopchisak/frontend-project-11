@@ -5,32 +5,31 @@ import stylistic from '@stylistic/eslint-plugin'
 
 export default defineConfig([
   {
-    files: [
+    'files': [
       '**/*.{js,mjs,cjs}',
     ],
-    plugins: {
+    'plugins': {
       js,
       '@stylistic': stylistic,
     },
     'extends': [
       'js/recommended',
     ],
-    rules: {
+    'rules': {
       '@stylistic/quotes': ['error', 'single'],
       '@stylistic/semi': ['error', 'never'],
       '@stylistic/no-multiple-empty-lines': ['error', { max: 1 }],
       '@stylistic/eol-last': ['error', 'always'],
       '@stylistic/object-curly-spacing': ['error', 'always'],
       '@stylistic/space-infix-ops': ['error', { int32Hint: false }],
-
       '@stylistic/no-trailing-spaces': ['error', {
         ignoreComments: true,
         skipBlankLines: false,
       }],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
-      '@stylistic/quote-props': ['error', 'as-needed', {
+      '@stylistic/quote-props': ['error', 'consistent-as-needed', {
         keywords: true,
-        unnecessary: true,
+        unnecessary: false,
         numbers: true,
       }],
       '@stylistic/indent': ['error', 2, {
@@ -46,7 +45,7 @@ export default defineConfig([
         ImportDeclaration: 1,
         flatTernaryExpressions: false,
       }],
-      '@stylistic/arrow-parens': ['error', 'as-needed'],
+      '@stylistic/arrow-parens': ['error', 'always'],
     },
   },
   {

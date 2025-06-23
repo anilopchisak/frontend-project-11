@@ -6,11 +6,11 @@ export default (state, elements) => {
       state.ui.readPosts.push(postId)
   }
 
-  postsContainer.addEventListener('click', e => {
+  postsContainer.addEventListener('click', (e) => {
     const previewButton = e.target.closest('button[data-bs-toggle="modal"]')
     if (previewButton) {
       const postId = previewButton.dataset.id
-      const post = state.posts.find(p => p.id === postId)
+      const post = state.posts.find((p) => p.id === postId)
       if (!post) return
 
       markPostAsRead(state, postId)
