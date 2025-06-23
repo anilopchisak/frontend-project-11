@@ -32,8 +32,6 @@ export default (state, elements, t) => {
                         post.description)
                     state.posts.push(processedPost)
                 })
-                
-                console.log(state.posts)
 
                 state.ui.form.status = FORM_STATUS.SUCCESS
                 state.ui.form.value = '';

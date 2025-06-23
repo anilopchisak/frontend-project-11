@@ -11,3 +11,5 @@ export const ERROR_STATUS = {
     NETWORK: 'errors.network',
     PARSING: 'errors.parsing',
 }
+
+export const UPDATE_INTERVAL = 5000

@@ -1,5 +1,6 @@
 import initFormController from './controllers/formControllers.js'
 import { initState, makeWatchedState } from './store/state.js';
+import initUpdater from './http/updater.js'
 import { renderAll } from './view/views.js'
 import i18n from 'i18next'
 import resources from './locales/index.js'
@@ -27,6 +28,13 @@ export default () => {
     })
 
     initFormController(state, elements, i18n.t)
+
+    const stopUpdater = initUpdater(state)
+    
+    window.addEventListener('beforeunload', stopUpdater)
+    window.addEventListener('error', () => {
+        if (stopUpdater) stopUpdater();
+    });
 
     renderAll(state, elements, i18n.t)
 }
