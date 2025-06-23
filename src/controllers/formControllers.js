@@ -20,8 +20,8 @@ export default (state, elements, t) => {
     const existingUrls = state.feeds.map(feed => feed.url)
 
     validateUrl(url, existingUrls)
-      .then((validUrl) => fetchRSS(validUrl))
-      .then((xml) => parseRSS(xml, url))
+      .then(validUrl => fetchRSS(validUrl))
+      .then(xml => parseRSS(xml, url))
       .then(({ feed, posts }) => {
         state.feeds.push(
           createFeed(feed.url, feed.title, feed.description),
