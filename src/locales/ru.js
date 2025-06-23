@@ -3,7 +3,7 @@ export default {
         errors: {
             invalidUrl: 'Ссылка должна быть валидным URL',
             duplicateUrl: 'RSS уже существует',
-            network: 'Ошибка подключения к сети',
+            network: 'Ошибка сети',
             parsing: 'Ресурс не содержит валидный RSS',
         },
         success: 'RSS успешно загружен',
